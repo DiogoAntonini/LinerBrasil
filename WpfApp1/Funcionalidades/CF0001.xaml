@@ -1,0 +1,70 @@
+﻿<Window x:Class="LinerBrasil.CF0001"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Liner Brasil Ltda." Height="600" Width="800" ResizeMode="NoResize"
+        PreviewKeyDown="Window_PreviewKeyDown">
+
+    <Window.Icon>
+        <BitmapImage UriSource="pack://application:,,,/LinerApp;component/Images/LinerApenasLogo.png"/>
+    </Window.Icon>
+
+    <Grid Width="800" Height="600">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="235*"/>
+            <RowDefinition Height="349*"/>
+        </Grid.RowDefinitions>
+
+        <Image Source="pack://application:,,,/LinerApp;component/Images/BgLiner.png" Stretch="UniformToFill" Grid.RowSpan="2"/>
+        <Rectangle Width="170" Height="257" Fill="White" HorizontalAlignment="Center" VerticalAlignment="Top" RadiusX="20" RadiusY="20" Margin="0,164,0,0" Grid.RowSpan="2"/>
+        <Image Source="pack://application:,,,/LinerApp;component/Images/LinerLogoTransparente.png" Margin="355,168,355,328" Grid.RowSpan="2"/>
+        <Image Source="pack://application:,,,/LinerApp;component/Images/Usuario.png" Margin="320,30,462,300" Grid.Row="1"/>
+        <Image Source="pack://application:,,,/LinerApp;component/Images/Senha.png" Margin="320,72,462,259" RenderTransformOrigin="1.325,0.529" Grid.Row="1"/>
+
+        <TextBox x:Name="UsuarioTextBox" Margin="339,30,331,303"
+                     VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
+                     Background="White" Foreground="Black" BorderBrush="Gray" BorderThickness="0,0,0,1" Grid.Row="1" MaxLength="20"/>
+
+        <PasswordBox x:Name="SenhaPasswordBox" Margin="339,70,331,261"
+              VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
+              Background="White" Foreground="Black" BorderBrush="Gray" BorderThickness="0,0,0,1" Grid.Row="1" MaxLength="11"/>
+
+        <Button Content="ENTRAR" 
+            Width="158" 
+            Height="26" 
+            Background="#003C1E" 
+            Foreground="White" 
+            FontSize="8" 
+            FontWeight="Bold"   
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Top" 
+            Margin="0,131,0,0" 
+            Grid.Row="1" 
+            Click="ButtonLogin_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#006934"/>
+                    <Setter Property="BorderBrush" Value="#006934"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="Padding" Value="5"/>
+
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="1"
+                    CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                 VerticalAlignment="Center"
+                                 Content="{TemplateBinding Content}"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+</Window>

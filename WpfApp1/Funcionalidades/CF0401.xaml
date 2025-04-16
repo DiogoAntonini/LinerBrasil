@@ -1,0 +1,126 @@
+﻿<Window x:Class="LinerApp.CF0401"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Liner Brasil Ltda." Height="800" Width="1280" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded"
+        MouseDoubleClick="dtgGradeParadas_MouseDoubleClick">
+
+    <Window.Icon>
+        <BitmapImage UriSource="pack://application:,,,/LinerApp;component/Images/LinerApenasLogo.png"/>
+    </Window.Icon>
+
+    <Grid>
+        <DataGrid x:Name="dtgGradeProducao" 
+                  Margin="3,147,172,43"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="CLIENTE" Binding="{Binding NmCliente}" />
+                <DataGridTextColumn Header="COD. INTERNO" Binding="{Binding CdInterno}" />
+                <DataGridTextColumn Header="MÁQUINA" Binding="{Binding IdMaquina}" />
+                <DataGridTextColumn Header="DATA" Binding="{Binding DtSiliconizacao}" />
+                <DataGridTextColumn Header="Nº OS" Binding="{Binding CdOS}" />
+                <DataGridTextColumn Header="LOTE MP" Binding="{Binding IdRecebimento}" />
+                <DataGridTextColumn Header="MTS LINEAR" Binding="{Binding NrMetrosLinear}" />
+                <DataGridTextColumn Header="Nº BOBINA PRODUZIDA" Binding="{Binding NrBobinaProduzida}" />
+                <DataGridTextColumn Header="OPERADOR" Binding="{Binding NmOperador}" />
+                <DataGridTextColumn Header="BS" Binding="{Binding CdBobinaSiliconada}" />
+                <DataGridTextColumn Header="M²" Binding="{Binding NrMetrosQuadrados}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid x:Name="dtgGradeParadas" 
+                  Margin="3,147,172,43"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding IdParada}" />
+                <DataGridTextColumn Header="MÁQUINA" Binding="{Binding IdMaquina}" />
+                <DataGridTextColumn Header="DATA INICIAL" Binding="{Binding DtInicial}" />
+                <DataGridTextColumn Header="Nº OS" Binding="{Binding CdOS}" />
+                <DataGridTextColumn Header="TIPO PARADA" Binding="{Binding IdTipoParada}" />
+                <DataGridTextColumn Header="DATA FINAL" Binding="{Binding DtFinal}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Rectangle Fill="#003C1E" Width="1280" Height="111" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Image Source="pack://application:,,,/LinerApp;component/Images/LogoLiner.png" Margin="1143,9,36,668"/>
+
+        <Button x:Name="btnProducao" Width="123" Height="64" Content="Produção" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Bold" Margin="10,47,0,0" Foreground="White" Click="btnProducao_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid Margin="0,0,12,0">
+                        <Border Background="#003C1E" Margin="10,30,9,0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+
+                        <Rectangle x:Name="rctProducao" Height="5" Width="200" Fill="White" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="btnParadas" Width="123" Height="64" Content="Paradas" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Bold" Margin="116,47,0,0" Foreground="White" Click="btnParadas_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Border Background="#003C1E" Margin="10,30,9,0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+
+                        <Rectangle x:Name="rctParadas" Height="5" Width="200" Fill="White" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button Width="34" Height="32" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#003C1E" Margin="10,13,0,0" Click="btnVoltar_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"  CornerRadius="40">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            <Image Source="pack://application:,,,/LinerApp;component/Images/Voltar.png" Height="30" Width="34"/>
+        </Button>
+
+        <Grid x:Name="grdDesenho">
+            <Rectangle x:Name="rctLinha1" Height="582" Width="2" Fill="#003C1E" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="1095,0,0,35"/>
+            <Rectangle x:Name="rctLinha2" Height="2" Width="1280" Fill="#003C1E" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,142,0,0"/>
+            <Rectangle x:Name="rctLinha3" Height="2" Width="184" Fill="#003C1E" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="1097,0,0,595"/>
+            <Rectangle x:Name="rctLinha4" Height="2" Width="181" Fill="#003C1E" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="1097,0,0,572"/>
+            <Rectangle x:Name="rctLinha5" Height="2" Width="183" Fill="#003C1E" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="1097,0,0,548"/>
+            <Rectangle x:Name="rctLinha6" Height="2" Width="183" Fill="#003C1E" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="1097,0,0,525"/>
+            <Rectangle x:Name="rctLinha7" Height="2" Width="1280" Fill="#003C1E" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-6,724,0,0"/>
+            <Button x:Name="btnAdicionar" Width="171" Height="20" Content="Adicionar" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" Margin="1097,144,0,0" Foreground="Black" Click="btnAdicionar_Click" Background="White" BorderThickness="0"/>
+            <Button x:Name="btnEnviarLaboratorio" Width="171" Height="20" Content="Enviar para laboratório" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" Margin="1097,166,0,0" Foreground="Black" Click="btnEnviarLaboratorio_Click" Background="White" BorderThickness="0"></Button>
+            <Button x:Name="btnEnviarCorte" Width="171" Height="20" Content="Enviar para corte" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" Margin="1097,190,0,0" Foreground="Black" Click="btnCorte_Click" Background="White" BorderThickness="0"></Button>
+            <Button x:Name="btnImprimirEtiqueta" Width="171" Height="20" Content="Imprimir Etiquetas" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" Margin="1097,213,0,0" Foreground="Black" Click="btnImpressao_Click" Background="White" BorderThickness="0"></Button>
+            <Button x:Name="btnAdicionarParada" Width="171" Height="20" Content="Adicionar" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" Margin="1097,236,0,0" Foreground="Black" Click="btnAdicionarParada_Click" Background="White" BorderThickness="0"/>
+        </Grid>
+
+        <ComboBox x:Name="DropDownMaquinas" Height="21" VerticalAlignment="Top" Margin="1138,116,15,0" SelectedIndex="0" SelectionChanged="DropDownMaquinas_SelectionChanged">
+            <ComboBoxItem Content="TODAS"/>
+            <ComboBoxItem Content="Máquina 1"/>
+            <ComboBoxItem Content="Máquina 9"/>
+            <ComboBoxItem Content="Máquina 11"/>
+            <ComboBoxItem Content="Máquina 21"/>
+            <ComboBox.Style>
+                <Style TargetType="ComboBox">
+                    <Setter Property="Background" Value="#003C1E"/>
+                    <Setter Property="BorderBrush" Value="#003C1E"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="Foreground" Value="#003C1E"/>
+                </Style>
+            </ComboBox.Style>
+        </ComboBox>
+
+    </Grid>
+</Window>

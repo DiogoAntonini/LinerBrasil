@@ -1,0 +1,111 @@
+﻿<Window x:Class="LinerApp.Funcionalidades.CF0205"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Height="700" Width="1100" ResizeMode="NoResize" Title="Liner Brasil Ltda."
+        WindowStartupLocation="CenterScreen" WindowStyle="None"
+        BorderBrush="#006934" BorderThickness="3">
+
+    <Grid Background="White" Margin="0,10,4,4">
+
+        <DataGrid x:Name="dtgGrade"
+              IsReadOnly="False" 
+              CanUserAddRows="False" 
+              CanUserDeleteRows="True"
+              AutoGenerateColumns="False" 
+              ScrollViewer.HorizontalScrollBarVisibility="Auto"
+              ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="2" Margin="5,20,5,35">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="MATERIAL" Binding="{Binding DsMaterial}" />
+                <DataGridTextColumn Header="DATA RECEBIMENTO" Binding="{Binding DtRecebimento}" />
+                <DataGridTextColumn Header="HORA RECEBIMENTO" Binding="{Binding HrRecebimento}" />
+                <DataGridTextColumn Header="N.F." Binding="{Binding NrNF}" />
+                <DataGridTextColumn Header="LOTE FORNECEDOR" Binding="{Binding IdLoteFornecedor}" />
+                <DataGridTextColumn Header="FORNECEDOR" Binding="{Binding NmFornecedor}" />
+                <DataGridTextColumn Header="DATA AMOSTRAGEM" Binding="{Binding DtAmostragem}" />
+                <DataGridTextColumn Header="HORA AMOSTRAGEM" Binding="{Binding HrAmostragem}" />
+                <DataGridTextColumn Header="PESO" Binding="{Binding NrPeso}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBlock Margin="5,-5,285,665">Enviar matérias para Estoque</TextBlock>
+
+        <Button 
+            x:Name="btnConfirmar"
+            Content="CONFIRMAR" 
+            Width="66" 
+            Height="26" 
+            Background="#003C1E" 
+            Foreground="White" 
+            FontSize="8" 
+            FontWeight="Bold"   
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top" 
+            Margin="53,652,0,0" 
+            Click="btnConfirmar_Click"
+            BorderThickness="1" Grid.Column="1">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#006934"/>
+                    <Setter Property="BorderBrush" Value="#006934"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="Padding" Value="5"/>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="1"
+                                CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              Content="{TemplateBinding Content}"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button 
+            x:Name="btnVoltar"
+            Content="VOLTAR" 
+            Width="66" 
+            Height="26" 
+            Background="White" 
+            Foreground="#003C1E" 
+            FontSize="8" 
+            FontWeight="Bold"   
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top" 
+            Margin="133,652,0,0" 
+            Click="btnVoltar_Click" Grid.Column="1">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#006934"/>
+                    <Setter Property="BorderBrush" Value="#003C1E"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="Padding" Value="5"/>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="1"
+                CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     Content="{TemplateBinding Content}"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="170*"/>
+            <ColumnDefinition Width="249*"/>
+        </Grid.ColumnDefinitions>
+    </Grid>
+</Window>

@@ -1,0 +1,113 @@
+﻿<Window x:Class="LinerApp.Funcionalidades.CF0005"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Height="700" Width="775" ResizeMode="NoResize" Title="Liner Brasil Ltda."
+        WindowStartupLocation="CenterScreen" WindowStyle="None"
+        BorderBrush="#006934" BorderThickness="3">
+
+    <Grid Background="White" Margin="0,10,4,4">
+
+        <DataGrid x:Name="dtgGrade"
+                  IsReadOnly="False" 
+                  CanUserAddRows="False" 
+                  CanUserDeleteRows="False"
+                  AutoGenerateColumns="False" 
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                  Grid.ColumnSpan="2" 
+                  Margin="5,20,0,35">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="CLIENTE" Binding="{Binding NmCliente}" />
+                <DataGridTextColumn Header="CODIGO LINER" Binding="{Binding CdMaterialInterno}" />
+                <DataGridTextColumn Header="CODIGO CLIENTE" Binding="{Binding CdMaterialCliente}" />
+                <DataGridTextColumn Header="METROS LINEARES" Binding="{Binding NrMetrosLinear}" />
+                <DataGridTextColumn Header="LARGURA" Binding="{Binding NrLargura}" />
+                <DataGridTextColumn Header="MTS² BOBINA" Binding="{Binding NrMetrosQuadradoBobina}" />
+                <DataGridTextColumn Header="MTS² PALETE" Binding="{Binding NrMetrosQuadradoPalete}" />
+                <DataGridTextColumn Header="QTD. BOBINAS POR PALETE" Binding="{Binding QtBobinasPorPalete}" />
+                <DataGridTextColumn Header="COLUNAS POR PALETE" Binding="{Binding NrColunasPorPalete}" />
+                <DataGridTextColumn Header="BOBINAS POR COLUNA" Binding="{Binding NrBobinasPorColuna}" />
+                <DataGridCheckBoxColumn Header="ETIQUETA DENTRO E FORA?" Binding="{Binding StEtiquetaDentroEFora}" />
+                <DataGridTextColumn Header="DIÂMETRO MIN" Binding="{Binding NrDiaMetroMin}" />
+                <DataGridTextColumn Header="DIÂMETRO MAX" Binding="{Binding NrDiametroMax}" />
+                <DataGridTextColumn Header="EMENDA AUTOMÁTICA" Binding="{Binding DsEmendaAutomatica}" />
+                <DataGridTextColumn Header="EMENDA MANUAL" Binding="{Binding DsEmendaManual}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button 
+     x:Name="btnConfirmar"
+     Content="CONFIRMAR" 
+     Width="66" 
+     Height="26" 
+     Background="#003C1E" 
+     Foreground="White" 
+     FontSize="8" 
+     FontWeight="Bold"   
+     HorizontalAlignment="Left" 
+     VerticalAlignment="Top" 
+     Margin="303,654,0,0" 
+     Click="btnConfirmar_Click"
+     BorderThickness="1">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#006934"/>
+                    <Setter Property="BorderBrush" Value="#006934"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="Padding" Value="5"/>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                         BorderBrush="{TemplateBinding BorderBrush}"
+                         BorderThickness="1"
+                         CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Content="{TemplateBinding Content}"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button 
+     x:Name="btnVoltar"
+     Content="VOLTAR" 
+     Width="66" 
+     Height="26" 
+     Background="White" 
+     Foreground="#003C1E" 
+     FontSize="8" 
+     FontWeight="Bold"   
+     HorizontalAlignment="Left" 
+     VerticalAlignment="Top" 
+     Margin="383,654,0,0" 
+     Click="btnVoltar_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#006934"/>
+                    <Setter Property="BorderBrush" Value="#003C1E"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="Padding" Value="5"/>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+         BorderBrush="{TemplateBinding BorderBrush}"
+         BorderThickness="1"
+         CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center"
+              VerticalAlignment="Center"
+              Content="{TemplateBinding Content}"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+    </Grid>
+</Window>

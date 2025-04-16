@@ -1,0 +1,119 @@
+﻿<Window x:Class="LinerApp.Funcionalidades.CF0312"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Height="710" Width="1020" ResizeMode="NoResize" Title="Liner Brasil Ltda."
+        WindowStartupLocation="CenterScreen" WindowStyle="None"
+        BorderBrush="#006934" BorderThickness="3">
+
+    <Grid Background="White" Margin="0,10,179,4">
+
+        <DataGrid x:Name="dtgGrade"
+                  IsReadOnly="False" 
+                  CanUserAddRows="False" 
+                  CanUserDeleteRows="False"
+                  AutoGenerateColumns="False" 
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                  Grid.ColumnSpan="2" 
+              Margin="5,25,-175,35">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="LOTE MP" Binding="{Binding IdRecebimento}" />
+                <DataGridTextColumn Header="RELEASE (DIREITA)" Binding="{Binding NrReleaseDireita}" />
+                <DataGridTextColumn Header="RELEASE (MEIO)" Binding="{Binding NrReleaseMeio}" />
+                <DataGridTextColumn Header="RELEASE (ESQUERDA)" Binding="{Binding NrReleaseEsquerda}" />
+                <DataGridTextColumn Header="RELEASE (MÉDIA)" Binding="{Binding NrReleaseMedia}" />
+                <DataGridTextColumn Header="ADESÃO" Binding="{Binding NrAdesao}" />
+                <DataGridTextColumn Header="MIGRAÇÃO" Binding="{Binding NrMigracao}" />
+                <DataGridCheckBoxColumn Header="ALVEJANTE" Binding="{Binding StAlvejante}" />
+                <DataGridTextColumn Header="LARGURA" Binding="{Binding NrLargura}" />
+                <DataGridTextColumn Header="COR" Binding="{Binding NrCor}" />
+                <DataGridTextColumn Header="POROSIDADE GURLEY" Binding="{Binding NrPorosidadeGurley}" />
+                <DataGridTextColumn Header="ABSORÇÃO COOB" Binding="{Binding NrAbsorcaoCoob}" />
+                <DataGridTextColumn Header="GR M.P" Binding="{Binding NrGrMP}" />
+                <DataGridTextColumn Header="GR S.A" Binding="{Binding NrGrSA}" />
+                <DataGridTextColumn Header="STATUS" Binding="{Binding DsStatus}" />
+                <DataGridTextColumn Header="DESVIO" Binding="{Binding DsDesvio}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button 
+            x:Name="btnConfirmar"
+            Content="CONFIRMAR" 
+            Width="66" 
+            Height="26" 
+            Background="#003C1E" 
+            Foreground="White" 
+            FontSize="8" 
+            FontWeight="Bold"   
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top" 
+            Margin="130,662,0,0" 
+            Click="btnConfirmar_Click"
+            BorderThickness="1" Grid.Column="1">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#006934"/>
+                    <Setter Property="BorderBrush" Value="#006934"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="Padding" Value="5"/>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="1"
+                                CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              Content="{TemplateBinding Content}"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button 
+            x:Name="btnVoltar"
+            Content="VOLTAR" 
+            Width="66" 
+            Height="26" 
+            Background="White" 
+            Foreground="#003C1E" 
+            FontSize="8" 
+            FontWeight="Bold"   
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top" 
+            Margin="210,662,0,0" 
+            Click="btnVoltar_Click" Grid.Column="1">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#006934"/>
+                    <Setter Property="BorderBrush" Value="#003C1E"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="Padding" Value="5"/>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="1"
+                CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     Content="{TemplateBinding Content}"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="170*"/>
+            <ColumnDefinition Width="249*"/>
+        </Grid.ColumnDefinitions>
+
+    </Grid>
+</Window>

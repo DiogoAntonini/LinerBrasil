@@ -1,0 +1,205 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Funcionalidades\Configurações\**" />
+    <Compile Remove="Funcionalidades\Corte\**" />
+    <Compile Remove="Imagens\**" />
+    <EmbeddedResource Remove="Funcionalidades\Configurações\**" />
+    <EmbeddedResource Remove="Funcionalidades\Corte\**" />
+    <EmbeddedResource Remove="Imagens\**" />
+    <None Remove="Funcionalidades\Configurações\**" />
+    <None Remove="Funcionalidades\Corte\**" />
+    <None Remove="Imagens\**" />
+    <Page Remove="Funcionalidades\Configurações\**" />
+    <Page Remove="Funcionalidades\Corte\**" />
+    <Page Remove="Imagens\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Images\AvancarPag.png" />
+    <None Remove="Images\BgLiner.png" />
+    <None Remove="Images\Cadastro.png" />
+    <None Remove="Images\Configuracao.png" />
+    <None Remove="Images\Corte.png" />
+    <None Remove="Images\Laboratorio.png" />
+    <None Remove="Images\LinerApenasLogo.png" />
+    <None Remove="Images\LinerLogoTransparente.png" />
+    <None Remove="Images\LogoLiner.png" />
+    <None Remove="Images\MateriaPrima.png" />
+    <None Remove="Images\Planejamento.png" />
+    <None Remove="Images\Producao.png" />
+    <None Remove="Images\Recebimento.png" />
+    <None Remove="Images\Senha.png" />
+    <None Remove="Images\Siliconizacao.png" />
+    <None Remove="Images\User.png" />
+    <None Remove="Images\Usuario.png" />
+    <None Remove="Images\Voltar.png" />
+    <None Remove="Images\VoltarPag.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\AvancarPag.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BgLiner.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Cadastro.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Configuracao.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Corte.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Laboratorio.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\LinerApenasLogo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\LinerLogoTransparente.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\LogoLiner.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\MateriaPrima.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Planejamento.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Producao.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Recebimento.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Senha.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Siliconizacao.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Usuario.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Voltar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\VoltarPag.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Npgsql" Version="9.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Funcionalidades\CF0003.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Funcionalidades\CF0006.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Funcionalidades\CF0104.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Funcionalidades\CF0316.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Funcionalidades\CF0407.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Funcionalidades\CF0314.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Funcionalidades\CF0406.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Funcionalidades\CF0405.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Funcionalidades\CF0313.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Funcionalidades\CF0312.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Funcionalidades\CF0311.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Funcionalidades\CF0310.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Funcionalidades\CF0309.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Funcionalidades\CF0308.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Funcionalidades\CF0307.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Funcionalidades\CF0306.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Funcionalidades\db\LayoutEtiquetaAprovacaoSemiAcab.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Funcionalidades\db\LayoutIdentificacaoTirada.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Funcionalidades\CF0003.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Funcionalidades\CF0104.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Funcionalidades\CF0314.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Funcionalidades\CF0405.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Funcionalidades\CF0309.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Funcionalidades\CF0308.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Funcionalidades\CF0312.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Funcionalidades\CF0311.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,93 @@
+﻿<Window x:Class="LinerApp.Funcionalidades.CF0002"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Liner Brasil Ltda." Height="800" Width="1280" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Icon>
+        <BitmapImage UriSource="pack://application:,,,/LinerApp;component/Images/LinerApenasLogo.png"/>
+    </Window.Icon>
+
+    <Grid>
+        <Button x:Name="btnPlanejamento" Width="290" Height="290" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#003C1E" Margin="98,77,0,0" Click="btnPlanejamento_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="40">
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Image Source="pack://application:,,,/LinerApp;component/Images/Planejamento.png" Width="100" Height="100" />
+                            <TextBlock Text="Planejamento" FontSize="25" Foreground="White" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="btnRecebimento" Width="290" Height="290" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#003C1E" Margin="498,77,0,0" Click="btnRecebimento_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="40">
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Image Source="pack://application:,,,/LinerApp;component/Images/Recebimento.png" Width="100" Height="100" />
+                            <TextBlock Text="Recebimento" FontSize="25" Foreground="White" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="btnLaboratorio" Width="290" Height="290" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#003C1E" Margin="889,77,0,0" Click="btnLaboratorio_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="40">
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Image Source="pack://application:,,,/LinerApp;component/Images/Laboratorio.png" Width="100" Height="100" />
+                            <TextBlock Text="Laboratório" FontSize="25" Foreground="White" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="btnSiliconizacao" Width="290" Height="290" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#003C1E" Margin="98,397,0,0" Click="btnSiliconizacao_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="40">
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Image Source="pack://application:,,,/LinerApp;component/Images/Siliconizacao.png" Width="100" Height="100" />
+                            <TextBlock Text="Siliconização" FontSize="25" Foreground="White" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="btnCorte" Width="290" Height="290" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#003C1E" Margin="498,397,0,0">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="40">
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Image Source="pack://application:,,,/LinerApp;component/Images/Corte.png" Width="100" Height="100" />
+                            <TextBlock Text="Corte" FontSize="25" Foreground="White" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="btnConfiguracoes" Width="290" Height="290" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#003C1E" Margin="889,397,0,0" Click="btnConfiguracoes_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="30">
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Image Source="pack://application:,,,/LinerApp;component/Images/Configuracao.png" Width="100" Height="100" />
+                            <TextBlock Text="Configurações" FontSize="25" Foreground="White" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+</Window>

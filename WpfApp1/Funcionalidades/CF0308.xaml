@@ -1,0 +1,136 @@
+﻿<Window x:Class="LinerApp.Funcionalidades.CF0308"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Liner Brasil Ltda." Height="800" Width="1280" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded">
+
+    <Window.Icon>
+        <BitmapImage UriSource="pack://application:,,,/LinerApp;component/Images/LinerApenasLogo.png"/>
+    </Window.Icon>
+
+    <Grid>
+
+        <DataGrid x:Name="dtgGradeExtrusao" 
+                  Margin="3,116,172,43" 
+                  AutoGenerateColumns="False" 
+                  IsReadOnly="True"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="HORA INÍCIO" Binding="{Binding HrInicioFormatada}" />
+                <DataGridTextColumn Header="HORA FIM" Binding="{Binding HrFimFormatada}" />
+                <DataGridTextColumn Header="METRAGEM" Binding="{Binding NrMetragem}" />
+                <DataGridTextColumn Header="OS" Binding="{Binding NrOS}" />
+                <DataGridTextColumn Header="CLIENTE" Binding="{Binding NmCliente}" />
+                <DataGridTextColumn Header="DATA" Binding="{Binding DtProducaoFormatada}" />
+                <DataGridTextColumn Header="TURNO" Binding="{Binding DsTurno}" />
+                <DataGridTextColumn Header="PAPEL" Binding="{Binding DsPapel}" />
+                <DataGridTextColumn Header="TOTAL METRAGEM" Binding="{Binding NrTotalMetragem}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid x:Name="dtgGradeSiliconizacao" 
+                  Margin="3,116,172,43" 
+                  AutoGenerateColumns="False" 
+                  IsReadOnly="True"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="CLIENTE" Binding="{Binding NmCliente}" />
+                <DataGridTextColumn Header="COD. INTERNO" Binding="{Binding CdInterno}" />
+                <DataGridTextColumn Header="MÁQUINA" Binding="{Binding IdMaquina}" />
+                <DataGridTextColumn Header="DATA" Binding="{Binding DtSiliconizacao}" />
+                <DataGridTextColumn Header="Nº OS" Binding="{Binding CdOS}" />
+                <DataGridTextColumn Header="LOTE MP" Binding="{Binding IdRecebimento}" />
+                <DataGridTextColumn Header="MTS LINEAR" Binding="{Binding NrMetrosLinear}" />
+                <DataGridTextColumn Header="Nº BOBINA PRODUZIDA" Binding="{Binding NrBobinaProduzida}" />
+                <DataGridTextColumn Header="OPERADOR" Binding="{Binding NmOperador}" />
+                <DataGridTextColumn Header="BS" Binding="{Binding CdBobinaSiliconada}" />
+                <DataGridTextColumn Header="M²" Binding="{Binding NrMetrosQuadrados}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid x:Name="dtgGradeFormulas" 
+                  Margin="3,116,172,43" 
+                  AutoGenerateColumns="False" 
+                  IsReadOnly="True"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Fórmulas" Binding="{Binding HrInicioFormatada}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Rectangle Fill="#003C1E" Width="1280" Height="111" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Image Source="pack://application:,,,/LinerApp;component/Images/LogoLiner.png" Margin="1143,9,36,668"/>
+
+        <Button x:Name="btnExtrusao" Width="102" Height="64" Content="Extrusão" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Bold" Margin="133,47,0,0" Foreground="White" Click="btnExtrusao_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid Margin="0,0,12,0">
+                        <Border Background="#003C1E" Margin="10,30,9,0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <Rectangle x:Name="rctExtrusao" Height="5" Width="200" Fill="White" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="btnSiliconizacao" Width="123" Height="64" Content="Siliconização" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Bold" Margin="10,47,0,0" Foreground="White" Click="btnSiliconizacao_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Border Background="#003C1E" Margin="10,30,9,0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <Rectangle x:Name="rctSiliconizacao" Height="5" Width="200" Fill="White" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button Width="34" Height="32" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#003C1E" Margin="10,13,0,0" Click="btnVoltar_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"  CornerRadius="40">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            <Image Source="pack://application:,,,/LinerApp;component/Images/Voltar.png" Height="30" Width="34"/>
+        </Button>
+
+        <Button x:Name="btnFormulas" Width="102" Height="64" Content="Fórmulas" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Bold" Margin="223,47,0,0" Foreground="White" Click="btnFormulas_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border Background="#003C1E" Margin="10,30,9,0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+
+                        <Rectangle x:Name="rctFormulas" Height="5" Width="200" Fill="White" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Grid x:Name="grdDesenho">
+            <Rectangle x:Name="rctLinha1" Height="638" Width="2" Fill="#003C1E" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="1095,0,0,35"/>
+            <Rectangle x:Name="rctLinha3" Height="2" Width="184" Fill="#003C1E" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="1097,0,0,627"/>
+            <Rectangle x:Name="rctLinha4" Height="2" Width="183" Fill="#003C1E" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="1097,0,0,604"/>
+            <Rectangle x:Name="rctLinha7" Height="2" Width="1280" Fill="#003C1E" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-6,724,0,0"/>
+            <Button x:Name="btnAdicionarExtrusao" Width="182" Height="21" Content="Adicionar" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" Margin="1098,111,0,0" Foreground="Black" Background="White" BorderThickness="0" Click="btnAdicionarExtrusao_Click"></Button>
+            <Button x:Name="btnAlterarExtrusao" Width="182" Height="21" Content="Alterar" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" Margin="1098,134,0,0" Foreground="Black" Background="White" BorderThickness="0" Click="btnAlterarExtrusao_Click"></Button>
+            <Button x:Name="btnAdicionarFormula" Width="182" Height="21" Content="Adicionar" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" Margin="1098,111,0,0" Foreground="Black" Background="White" BorderThickness="0" Click="btnAdicionarFormula_Click"></Button>
+            <Button x:Name="btnAlterarFormula" Width="182" Height="21" Content="Alterar" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" Margin="1098,134,0,0" Foreground="Black" Background="White" BorderThickness="0" Click="btnAlterarFormula_Click"></Button>
+            <Button x:Name="btnApurarSiliconizacao" Width="182" Height="20" Content="Apurar" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" Margin="1098,111,0,0" Foreground="Black" Background="White" BorderThickness="0" Click="btnApurarSiliconizacao_Click"></Button>
+            <Button x:Name="btnImprimirEtiqueta" Width="182" Height="20" Content="Imprimir Etiqueta" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" Margin="1098,157,0,0" Foreground="Black" Background="White" BorderThickness="0" Click="btnImprimirEtiqueta_Click"></Button>
+        </Grid>
+
+    </Grid>
+</Window>

@@ -1,0 +1,216 @@
+﻿<Window x:Class="LinerApp.Funcionalidades.CF0313"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Height="710" Width="1020" ResizeMode="NoResize" Title="Liner Brasil Ltda."
+        WindowStartupLocation="CenterScreen" WindowStyle="None"
+        BorderBrush="#006934" BorderThickness="3">
+
+    <Grid Background="White" Margin="0,0,0,0">
+
+        <TextBlock x:Name="txPesquisa" Text="Pesquisa:" Margin="830,3,0,0" Height="16" VerticalAlignment="Top" HorizontalAlignment="Left" Width="55"/>
+        <TextBox x:Name="txtPesquisa" TextChanged="txtPesquisa_TextChanged" Margin="882,2,0,0" HorizontalAlignment="Left" Width="123" Height="19" VerticalAlignment="Top"/>
+
+        <DataGrid x:Name="dtgGrade"
+              IsReadOnly="False" 
+              CanUserAddRows="False" 
+              CanUserDeleteRows="False"
+              AutoGenerateColumns="False" 
+              ScrollViewer.HorizontalScrollBarVisibility="Auto"
+              ScrollViewer.VerticalScrollBarVisibility="Auto" 
+              Margin="239,25,5,35">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nº RECEBIMENTO" Binding="{Binding IdRecebimento}" />
+                <DataGridTextColumn Header="DESCRIÇÃO LINER" Binding="{Binding DsMaterialLiner}" />
+                <DataGridTextColumn Header="DESCRIÇÃO FORNECEDOR" Binding="{Binding DsFornecedor}" />
+                <DataGridTextColumn Header="DATA APURAÇÃO" Binding="{Binding DtApuracao}" />
+                <DataGridTextColumn Header="MÉTODO LINER" Binding="{Binding DsMetodoLiner}" />
+                <DataGridTextColumn Header="CARACTERÍSTICA/ENSAIO" Binding="{Binding DsCaracteristicaEnsaio}" />
+                <DataGridTextColumn Header="UNIDADE" Binding="{Binding DsUnidade}" />
+                <DataGridTextColumn Header="MÍNIMO" Binding="{Binding NrMinimo}" />
+                <DataGridTextColumn Header="MÁXIMO" Binding="{Binding NrMaximo}" />
+                <DataGridTextColumn Header="VALOR" Binding="{Binding NrValor}" />
+                <DataGridTextColumn Header="STATUS" Binding="{Binding DsStatusAmostra}" />
+                <DataGridTextColumn Header="RESPONSÁVEL" Binding="{Binding NmResponsavel}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TreeView Margin="2,25,778,35">
+            <TreeViewItem Header="PAPEL">
+                <TreeViewItem Header="25G C/A">
+                    <TreeViewItem Header="GRAMATURA">
+                        <TreeViewItem Header="MÍNIMO: 23,8"/>
+                        <TreeViewItem Header="MÁXIMO: 26,3"/>
+                    </TreeViewItem>
+
+                    <TreeViewItem Header="RESISTENCIA A TRAÇÃO LONGITUDINAL">
+                        <TreeViewItem Header="MÍNIMO: 1,9"/>
+                        <TreeViewItem Header="MÁXIMO: 2,8"/>
+                    </TreeViewItem>
+
+                    <TreeViewItem Header="RESISTENCIA A TRAÇÃO UMIDA">
+                        <TreeViewItem Header="MÍNIMO: 0,40"/>
+                        <TreeViewItem Header="MÁXIMO: 0,95"/>
+                    </TreeViewItem>
+
+                    <TreeViewItem Header="RESISTENCIA AO AR GURLEY">
+                        <TreeViewItem Header="MÍNIMO: 15"/>
+                        <TreeViewItem Header="MÁXIMO: 40"/>
+                    </TreeViewItem>
+
+                </TreeViewItem>
+
+                <TreeViewItem Header="25G S/A">
+                    <TreeViewItem Header="GRAMATURA">
+                        <TreeViewItem Header="MÍNIMO: 23,8"/>
+                        <TreeViewItem Header="MÁXIMO: 26,3"/>
+                    </TreeViewItem>
+
+                    <TreeViewItem Header="RESISTENCIA A TRAÇÃO LONGITUDINAL">
+                        <TreeViewItem Header="MÍNIMO: 1,5"/>
+                        <TreeViewItem Header="MÁXIMO: 10"/>
+                    </TreeViewItem>
+
+                    <TreeViewItem Header="RESISTENCIA A TRAÇÃO UMIDA">
+                        <TreeViewItem Header="MÍNIMO: 0,4"/>
+                        <TreeViewItem Header="MÁXIMO: 10"/>
+                    </TreeViewItem>
+
+                    <TreeViewItem Header="RESISTENCIA AO AR GURLEY">
+                        <TreeViewItem Header="MÍNIMO: 15"/>
+                        <TreeViewItem Header="MÁXIMO: 40"/>
+                    </TreeViewItem>
+                </TreeViewItem>
+
+                <TreeViewItem Header="30G S/A">
+                    <TreeViewItem Header="GRAMATURA">
+                        <TreeViewItem Header="MÍNIMO: 28,5"/>
+                        <TreeViewItem Header="MÁXIMO: 31,5"/>
+                    </TreeViewItem>
+
+                    <TreeViewItem Header="RESISTENCIA A TRAÇÃO LONGITUDINAL">
+                        <TreeViewItem Header="MÍNIMO: 1,5"/>
+                        <TreeViewItem Header="MÁXIMO: 10"/>
+                    </TreeViewItem>
+
+                    <TreeViewItem Header="RESISTENCIA A TRAÇÃO UMIDA">
+                        <TreeViewItem Header="MÍNIMO: 0,30"/>
+                        <TreeViewItem Header="MÁXIMO: 10"/>
+                    </TreeViewItem>
+
+                    <TreeViewItem Header="RESISTENCIA AO AR GURLEY">
+                        <TreeViewItem Header="MÍNIMO: 10"/>
+                        <TreeViewItem Header="MÁXIMO: 40"/>
+                    </TreeViewItem>
+                </TreeViewItem>
+
+                <TreeViewItem Header="50Gr">
+                    <TreeViewItem Header="GRAMATURA">
+                        <TreeViewItem Header="MÍNIMO: 47,5"/>
+                        <TreeViewItem Header="MÁXIMO: 52,5"/>
+                    </TreeViewItem>
+
+                    <TreeViewItem Header="RESISTENCIA A TRAÇÃO LONGITUDINAL">
+                        <TreeViewItem Header="MÍNIMO: 1,5"/>
+                        <TreeViewItem Header="MÁXIMO: 15"/>
+                    </TreeViewItem>
+                </TreeViewItem>
+            </TreeViewItem>
+
+            <TreeViewItem Header="TINTA">
+                <TreeViewItem Header="COR"/>
+                <TreeViewItem Header="PESO"/>
+                <TreeViewItem Header="VOLUME"/>
+            </TreeViewItem>
+
+            <TreeViewItem Header="QUÍMICO">
+                <TreeViewItem Header="PADRÃO">
+                    <TreeViewItem Header="APARÊNCIA"/>
+                    <TreeViewItem Header="ANÁLISE DO CERTIFICADO"/>
+                    <TreeViewItem Header="AUSÊNCIA DE CONTAMINAÇÃO"/>
+                </TreeViewItem>
+
+                <TreeViewItem Header="XL 659">
+                    <TreeViewItem Header="VISCOSIDADE"/>
+                    <TreeViewItem Header="ANÁLISE DO CERTIFICADO"/>
+                    <TreeViewItem Header="AUSÊNCIA DE CONTAMINAÇÃO"/>
+                </TreeViewItem>
+            </TreeViewItem>
+
+        </TreeView>
+
+        <Button 
+        x:Name="btnConfirmar"
+        Content="CONFIRMAR" 
+        Width="66" 
+        Height="26" 
+        Background="#003C1E" 
+        Foreground="White" 
+        FontSize="8" 
+        FontWeight="Bold"   
+        HorizontalAlignment="Left" 
+        VerticalAlignment="Top" 
+        Margin="441,674,0,0" 
+        Click="btnConfirmar_Click"
+        BorderThickness="1">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#006934"/>
+                    <Setter Property="BorderBrush" Value="#006934"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="Padding" Value="5"/>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"
+                                      Content="{TemplateBinding Content}"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button 
+        x:Name="btnVoltar"
+        Content="VOLTAR" 
+        Width="66" 
+        Height="26" 
+        Background="White" 
+        Foreground="#003C1E" 
+        FontSize="8" 
+        FontWeight="Bold"   
+        HorizontalAlignment="Left" 
+        VerticalAlignment="Top" 
+        Margin="512,674,0,0" 
+        Click="btnVoltar_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#006934"/>
+                    <Setter Property="BorderBrush" Value="#003C1E"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="Padding" Value="5"/>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"
+                                      Content="{TemplateBinding Content}"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+    </Grid>
+</Window>

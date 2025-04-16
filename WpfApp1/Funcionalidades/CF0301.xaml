@@ -1,0 +1,66 @@
+﻿<Window x:Class="LinerApp.Funcionalidades.CF0301"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Liner Brasil Ltda." Height="800" Width="1280" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Icon>
+        <BitmapImage UriSource="pack://application:,,,/LinerApp;component/Images/LinerApenasLogo.png"/>
+    </Window.Icon>
+
+    <Grid>
+        <Button x:Name="btnMateriaPrima" Width="290" Height="290" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#003C1E" Margin="158,238,0,0" Click="btnMateriaPrima_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="40">
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Image Source="pack://application:,,,/LinerApp;component/Images/MateriaPrima.png" Width="100" Height="100" />
+                            <TextBlock Text="Matéria Prima" FontSize="25" Foreground="White" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="btnProducao" Width="290" Height="290" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#003C1E" Margin="478,238,0,0" Click="btnProducao_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="40">
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Image Source="pack://application:,,,/LinerApp;component/Images/Producao.png" Width="100" Height="100" />
+                            <TextBlock Text="Produção" FontSize="25" Foreground="White" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="btnCadastro" Width="290" Height="290" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#003C1E" Margin="798,238,0,0" Click="btnCadastro_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="40">
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Image Source="pack://application:,,,/LinerApp;component/Images/Cadastro.png" Width="100" Height="100" />
+                            <TextBlock Text="Cadastro" FontSize="25" Foreground="White" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button Width="34" Height="32" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#003C1E" Margin="10,13,0,0" Click="btnVoltar_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"  CornerRadius="40">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            <Image Source="/Images/Voltar.png" Height="30" Width="34"/>
+        </Button>
+
+    </Grid>
+</Window>

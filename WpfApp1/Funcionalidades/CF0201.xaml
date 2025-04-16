@@ -1,0 +1,144 @@
+﻿<Window x:Class="LinerApp.Funcionalidades.CF0201"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Liner Brasil Ltda." Height="800" Width="1280" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded">
+
+    <Window.Icon>
+        <BitmapImage UriSource="pack://application:,,,/LinerApp;component/Images/LinerApenasLogo.png"/>
+    </Window.Icon>
+
+    <Grid>
+        <TextBlock x:Name="txtDtInicial" VerticalAlignment="Top" Margin="794,118,0,0" Text="Data Inicial:" Height="17" HorizontalAlignment="Left" Width="65"/>
+        <DatePicker x:Name="dpDataInicial" VerticalAlignment="Top" Margin="859,116,267,0" SelectedDateChanged="dpDataInicial_SelectedDateChanged"/>
+        <TextBlock x:Name="txtDtFinal" VerticalAlignment="Top" Margin="1038,119,0,0" Text="Data Final:" HorizontalAlignment="Left" Width="60"/>
+        <DatePicker x:Name="dpDataFinal" VerticalAlignment="Top" Margin="1098,114,28,0" SelectedDateChanged="dpDataFinal_SelectedDateChanged"/>
+
+        <TextBlock x:Name="txPesquisa" Text="Pesquisa:" Margin="596,119,0,0" Height="16" VerticalAlignment="Top" HorizontalAlignment="Left" Width="55"/>
+        <TextBox x:Name="txtPesquisa" TextChanged="txtPesquisa_TextChanged" Margin="651,118,0,0" HorizontalAlignment="Left" Width="123" Height="19" VerticalAlignment="Top"/>
+
+        <Rectangle Fill="#003C1E" Width="1280" Height="111" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Image Source="pack://application:,,,/LinerApp;component/Images/LogoLiner.png" Margin="1143,9,36,668"/>
+
+        <DataGrid x:Name="dtgGradeCadastro" 
+                  Margin="3,147,172,43" 
+                  AutoGenerateColumns="False" 
+                  IsReadOnly="True"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="DESCRIÇÃO" Binding="{Binding NmDescricao}" />
+                <DataGridTextColumn Header="UNIDADE" Binding="{Binding DsUnidade}" />
+                <DataGridCheckBoxColumn Header="MATERIAL É ANALISADO?" Binding="{Binding StAnalise, Mode=OneWay}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid x:Name="dtgMateriasParaAnalise" 
+                  Margin="3,147,172,43" 
+                  AutoGenerateColumns="False" 
+                  IsReadOnly="True"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="DESCRIÇÃO" Binding="{Binding NmDescricao}" />
+                <DataGridTextColumn Header="UNIDADE" Binding="{Binding DsUnidade}" />
+                <DataGridCheckBoxColumn Header="MATERIAL É ANALISADO?" Binding="{Binding StAnalise, Mode=OneWay}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid x:Name="dtgGradeRecebimento" 
+                  Margin="3,147,172,43"
+                  AutoGenerateColumns="False" 
+                  IsReadOnly="True"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nº RECEBIMENTO" Binding="{Binding IdRecebimento}" />
+                <DataGridTextColumn Header="MATERIAL" Binding="{Binding DsMaterial}" />
+                <DataGridTextColumn Header="DATA RECEBIMENTO" Binding="{Binding DtRecebimento}" />
+                <DataGridTextColumn Header="HORA RECEBIMENTO" Binding="{Binding HrRecebimento}" />
+                <DataGridTextColumn Header="N.F." Binding="{Binding NrNF}" />
+                <DataGridTextColumn Header="LOTE FORNECEDOR" Binding="{Binding IdLoteFornecedor}" />
+                <DataGridTextColumn Header="FORNECEDOR" Binding="{Binding NmFornecedor}" />
+                <DataGridTextColumn Header="DATA AMOSTRAGEM" Binding="{Binding DtAmostragem}" />
+                <DataGridTextColumn Header="HORA AMOSTRAGEM" Binding="{Binding HrAmostragem}" />
+                <DataGridTextColumn Header="PESO" Binding="{Binding NrPeso}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button x:Name="btnCadastro" Width="101" Height="64" Content="Cadastro" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Bold" Margin="0,47,0,0" Foreground="White" Click="btnCadastro_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Border Background="#003C1E" Margin="10,30,9,0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+
+                        <Rectangle x:Name="rctCadastro" Height="5" Width="200" Fill="White" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="btnMateriasParaAnalise" Width="184" Height="64" Content="Matérias Para Análise" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Bold" Margin="101,47,0,0" Foreground="White" Click="btnMateriasParaAnalise_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid Margin="0,0,12,0">
+                        <Border Background="#003C1E" Margin="10,30,9,0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+
+                        <Rectangle x:Name="rctMateriasParaAnalise" Height="5" Width="200" Fill="White" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="btnRecebimento" Width="112" Height="64" Content="Recebimento" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Bold" Margin="273,47,0,0" Foreground="White" Click="btnRecebimento_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border Background="#003C1E" Margin="10,30,9,0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+
+                        <Rectangle x:Name="rctRecebimento" Height="5" Width="200" Fill="White" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Grid x:Name="grdDesenho">
+            <Rectangle x:Name="rctLinha1" Height="582" Width="2" Fill="#003C1E" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="1095,0,0,35"/>
+            <Rectangle x:Name="rctLinha2" Height="2" Width="1280" Fill="#003C1E" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,142,0,0"/>
+            <Rectangle x:Name="rctLinha3" Height="2" Width="184" Fill="#003C1E" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="1097,0,0,595"/>
+            <Rectangle x:Name="rctLinha4" Height="2" Width="181" Fill="#003C1E" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="1097,0,0,571"/>
+            <Rectangle x:Name="rctLinha5" Height="2" Width="183" Fill="#003C1E" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="1097,0,0,549"/>
+            <Rectangle x:Name="rctLinha6" Height="2" Width="183" Fill="#003C1E" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="1097,0,0,526"/>
+            <Rectangle x:Name="rctLinha7" Height="2" Width="1280" Fill="#003C1E" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-6,724,0,0"/>
+            <Button x:Name="btnAdicionarMaterial" Width="182" Height="20" Content="Adicionar" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" Margin="1097,144,0,0" Foreground="Black" Background="White" BorderThickness="0" Click="btnAdicionarMaterial_Click"></Button>
+            <Button x:Name="btnAdicionarRomaneio" Width="182" Height="20" Content="Adicionar" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" Margin="1097,144,0,0" Foreground="Black" Background="White" BorderThickness="0" Click="btnAdicionarRomaneio_Click"></Button>
+            <Button x:Name="btnAlterarMaterial" Width="183" Height="20" Content="Alterar" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" Margin="1097,166,0,0" Foreground="Black" Background="White" BorderThickness="0" Click="btnAlterarMaterial_Click"></Button>
+            <Button x:Name="btnAlterarRomaneio" Width="183" Height="20" Content="Alterar" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" Margin="1097,166,0,0" Foreground="Black" Background="White" BorderThickness="0" Click="btnAlterarRomaneio_Click"></Button>
+            <Button x:Name="btnEnviarAmostra" Width="183" Height="20" Content="Enviar Amostra" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" Margin="1097,190,0,0" Foreground="Black" Background="White" BorderThickness="0" Click="btnEnviarAmostra_Click"></Button>
+            <Button x:Name="btnEnviarEstoque" Width="183" Height="20" Content="Enviar Estoque" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" Margin="1097,213,0,0" Foreground="Black" Background="White" BorderThickness="0" Click="btnEnviarEstoque_Click"></Button>
+            <Button x:Name="btnExcluirMaterial" Width="183" Height="20" Content="Excluir" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" Margin="1097,190,0,0" Foreground="Black" Background="White" BorderThickness="0" Click="btnExcluirMaterial_Click"></Button>
+        </Grid>
+
+        <Button Name="btnVoltar" Width="34" Height="32" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#003C1E" Margin="10,13,0,0" Click="btnVoltar_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"  CornerRadius="40">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            <Image Source="pack://application:,,,/LinerApp;component/Images/Voltar.png" Height="30" Width="34"/>
+        </Button>
+
+    </Grid>
+</Window>

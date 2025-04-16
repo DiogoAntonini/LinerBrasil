@@ -1,0 +1,233 @@
+﻿<Window x:Class="LinerApp.Funcionalidades.CF0302"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Liner Brasil Ltda." Height="800" Width="1280" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded">
+
+    <Window.Icon>
+        <BitmapImage UriSource="pack://application:,,,/LinerApp;component/Images/LinerApenasLogo.png"/>
+    </Window.Icon>
+
+    <Grid>
+
+        <TextBlock x:Name="txPesquisa" Text="Pesquisa:" Margin="1082,116,0,0" Height="16" VerticalAlignment="Top" HorizontalAlignment="Left" Width="55"/>
+        <TextBox x:Name="txtPesquisa" TextChanged="txtPesquisa_TextChanged" Margin="1135,116,0,0" HorizontalAlignment="Left" Width="123" Height="19" VerticalAlignment="Top"/>
+
+        <DataGrid x:Name="dtgGradePapel" Margin="3,147,172,43" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="MATÉRIA" Binding="{Binding DsMaterial}" />
+                <DataGridTextColumn Header="DATA RECEBIMENTO" Binding="{Binding DtRecebimento}" />
+                <DataGridTextColumn Header="HORA RECEBIMENTO" Binding="{Binding HrRecebimento}" />
+                <DataGridTextColumn Header="DATA AMOSTRAGEM" Binding="{Binding DtAmostragem}" />
+                <DataGridTextColumn Header="HORA AMOSTRAGEM" Binding="{Binding HrAmostragem}" />
+                <DataGridTextColumn Header="N.F." Binding="{Binding NrNF}" />
+                <DataGridTextColumn Header="FORNECEDOR" Binding="{Binding NmFornecedor}" />
+                <DataGridTextColumn Header="LOTE FORNECEDOR" Binding="{Binding IdLoteFornecedor}" />
+                <DataGridTextColumn Header="Nº RECEBIMENTO" Binding="{Binding IdRecebimento}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid x:Name="dtgGradeTinta" Margin="3,147,172,43" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="CÓDIGO TINTA" Binding="{Binding CdTinta}" />
+                <DataGridTextColumn Header="DESCRIÇÃO" Binding="{Binding DsTinta}" />
+                <DataGridTextColumn Header="LOTE FORNECEDOR" Binding="{Binding NrNF}" />
+                <DataGridTextColumn Header="NOME FORNECEDOR" Binding="{Binding NrQuantidade}" />
+                <DataGridTextColumn Header="DATA FABRICAÇÃO" Binding="{Binding DtValidade}" />
+                <DataGridTextColumn Header="DATA VALIDADE" Binding="{Binding DtFabricacao}" />
+                <DataGridTextColumn Header="DATA AMOSTRAGEM" Binding="{Binding NmFornecedor}" />
+                <DataGridTextColumn Header="HORA AMOSTRAGEM" Binding="{Binding IdLoteFornecedor}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid x:Name="dtgGradeQuimico" Margin="3,147,172,43" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Químido" Binding="{Binding DsQuimico}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid x:Name="dtgPapelConcluido" Margin="3,147,172,43" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nº RECEBIMENTO" Binding="{Binding IdRecebimento}" />
+                <DataGridTextColumn Header="MATERIAL" Binding="{Binding DsMaterial}" />
+                <DataGridTextColumn Header="GRAMATURA" Binding="{Binding NrGramatura}" />
+                <DataGridTextColumn Header="LARGURA" Binding="{Binding NrLargura}" />
+                <DataGridCheckBoxColumn Header="POSSUI ALVEJANTE?" Binding="{Binding StAlvejante, Mode=OneWay}" />
+                <DataGridTextColumn Header="TRAÇÃO (SECA)" Binding="{Binding NrTracaoSeca}" />
+                <DataGridTextColumn Header="TRAÇÃO (ÚMICA" Binding="{Binding NrTracaoUmida}" />
+                <DataGridTextColumn Header="PORO. GURLEY" Binding="{Binding NrPorosidadeGurley}" />
+                <DataGridTextColumn Header="ABS. COOB" Binding="{Binding NrAbsorcaoCoob}" />
+                <DataGridTextColumn Header="STATUS AMOSTRA" Binding="{Binding DsStatusAmostra}" />
+                <DataGridTextColumn Header="RESPONSÁVEL" Binding="{Binding NmResponsavel}" />
+                <DataGridTextColumn Header="DESVIO" Binding="{Binding DsDesvio}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid x:Name="dtgTintaConcluido" Margin="3,147,172,43" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nº RECEBIMENTO" Binding="{Binding IdRecebimento}" />
+                <DataGridTextColumn Header="CÓD. TINTA" Binding="{Binding CdTinta}" />
+                <DataGridTextColumn Header="TINTA" Binding="{Binding DsTinta}" />
+                <DataGridTextColumn Header="LOTE FORNECEDOR" Binding="{Binding IdLoteFornecedor}" />
+                <DataGridTextColumn Header="FORNECEDOR" Binding="{Binding NmFornecedor}" />
+                <DataGridCheckBoxColumn Header="COR OK?" Binding="{Binding StCor, Mode=OneWay}" />
+                <DataGridTextColumn Header="PESO DO VOLUME" Binding="{Binding NrPesoDoVolume}" />
+                <DataGridTextColumn Header="VISCOSIDADE" Binding="{Binding NrViscosidade}" />
+                <DataGridTextColumn Header="STATUS" Binding="{Binding DsStatusAmostra}" />
+                <DataGridTextColumn Header="INSPETOR" Binding="{Binding NmInspetor}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid x:Name="dtgQuimicoConcluido" Margin="3,147,172,43" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Quimico concluido" Binding="{Binding IdRecebimento}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button 
+            x:Name="btnPendente"
+            Content="Pendente" 
+            Width="66" 
+            Height="26" 
+            Background="#003C1E" 
+            Foreground="White" 
+            FontSize="12" 
+            FontWeight="Bold"   
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top" 
+            Margin="15,113,0,0" 
+            Click="btnPendente_Click">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#006934"/>
+                    <Setter Property="BorderBrush" Value="#006934"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="Padding" Value="5"/>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="1"
+                CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Content="{TemplateBinding Content}"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button 
+            x:Name="btnConcluido"
+            Content="Concluída" 
+            Width="66" 
+            Height="26" 
+            Background="White" 
+            Foreground="#003C1E" 
+            FontSize="12" 
+            FontWeight="Bold"   
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top" 
+            Margin="85,113,0,0" 
+            Click="btnConcluido_Click">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#006934"/>
+                    <Setter Property="BorderBrush" Value="#003C1E"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="Padding" Value="5"/>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="1"
+                CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Content="{TemplateBinding Content}"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Rectangle Fill="#003C1E" Width="1280" Height="111" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Image Source="pack://application:,,,/LinerApp;component/Images/LogoLiner.png" Margin="1143,9,36,668"/>
+
+        <Button x:Name="btnPapel" Width="130" Height="64" Content="Papel" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Bold" Margin="10,47,0,0" Foreground="White" Click="btnPapel_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid Margin="0,0,12,0">
+                        <Border Background="#003C1E" Margin="10,30,9,0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <Rectangle x:Name="rctPapel" Height="5" Width="200" Fill="White" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="btnQuimico" Width="112" Height="64" Content="Fórmula" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Bold" Margin="128,47,0,0" Foreground="White" Click="btnQuimico_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border Background="#003C1E" Margin="10,30,9,0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <Rectangle x:Name="rctQuimico" Height="5" Width="200" Fill="White" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="btnTinta" Width="112" Height="64" Content="Tinta" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Bold" Margin="240,47,0,0" Foreground="White" Click="btnTinta_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border Background="#003C1E" Margin="10,30,9,0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <Rectangle x:Name="rctTinta" Height="5" Width="200" Fill="White" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button Width="34" Height="32" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#003C1E" Margin="10,13,0,0" Click="btnVoltar_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"  CornerRadius="40">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            <Image Source="pack://application:,,,/LinerApp;component/Images/Voltar.png" Height="30" Width="34"/>
+        </Button>
+
+        <Grid x:Name="grdDesenho">
+            <Rectangle x:Name="rctLinha1" Height="582" Width="2" Fill="#003C1E" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="1095,0,0,35"/>
+            <Rectangle x:Name="rctLinha2" Height="2" Width="1280" Fill="#003C1E" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,142,0,0"/>
+            <Rectangle x:Name="rctLinha3" Height="2" Width="184" Fill="#003C1E" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="1097,0,0,595"/>
+            <Rectangle x:Name="rctLinha4" Height="2" Width="181" Fill="#003C1E" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="1097,0,0,572"/>
+            <Rectangle x:Name="rctLinha5" Height="2" Width="183" Fill="#003C1E" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="1097,0,0,548"/>
+            <Rectangle x:Name="rctLinha7" Height="2" Width="1280" Fill="#003C1E" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-6,724,0,0"/>
+            <Button x:Name="btnApurarPapel" Width="170" Height="20" Content="Apurar papel" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" Margin="1097,144,0,0" Foreground="Black" Background="White" BorderThickness="0" Click="btnApurarPapel_Click"></Button>
+            <Button x:Name="btnApurarTinta" Width="170" Height="20" Content="Apurar tinta" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" Margin="1097,144,0,0" Foreground="Black" Background="White" BorderThickness="0" Click="btnApurarTinta_Click"></Button>
+            <Button x:Name="btnApurarQuimico" Width="170" Height="20" Content="Apurar quimico" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" Margin="1097,144,0,0" Foreground="Black" Background="White" BorderThickness="0" Click="btnApurarPapel_Click"></Button>
+            <Button x:Name="btnApurarLotePapel" Width="178" Height="20" Content="Apurar lote papel" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" Margin="1097,189,0,0" Foreground="Black" Background="White" BorderThickness="0" Click="btnApurarLotePapel_Click"/>
+            <Button x:Name="btnApurarLoteTinta" Width="178" Height="20" Content="Apurar lote tinta" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" Margin="1097,189,0,0" Foreground="Black" Background="White" BorderThickness="0" Click="btnApurarLoteTinta_Click"/>
+            <Button x:Name="btnApurarLoteQuimico" Width="178" Height="20" Content="Apurar lote quimico" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" Margin="1097,189,0,0" Foreground="Black" Background="White" BorderThickness="0" Click="btnApurarLoteQuimico_Click"/>
+            <Button x:Name="btnImprimirEtiquetaPapel" Width="178" Height="20" Content="Imprimir Etiquetas" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" Margin="1097,166,0,0" Foreground="Black" Background="White" BorderThickness="0" Click="btnImprimirEtiquetaPapel_Click"></Button>
+            <Button x:Name="btnImprimirEtiquetaTinta" Width="178" Height="20" Content="Imprimir Etiquetas" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" Margin="1097,166,0,0" Foreground="Black" Background="White" BorderThickness="0" Click="btnImprimirEtiquetaTinta_Click"></Button>
+            <Button x:Name="btnImprimirEtiquetaQuimico" Width="178" Height="20" Content="Imprimir Etiquetas" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" Margin="1097,166,0,0" Foreground="Black" Background="White" BorderThickness="0" Click="btnImprimirEtiquetaTinta_Click"></Button>
+        </Grid>
+
+    </Grid>
+</Window>

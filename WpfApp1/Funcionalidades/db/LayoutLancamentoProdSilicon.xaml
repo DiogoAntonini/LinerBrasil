@@ -1,0 +1,36 @@
+﻿<Window x:Class="LinerApp.Funcionalidades.db.LayoutLancamentoProdSilicon"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Liner Brasil Ltda." Height="261" Width="405" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        BorderBrush="Black " BorderThickness="1">
+
+    <Grid x:Name="grdImpressao" HorizontalAlignment="Center" Width="403" Height="243" VerticalAlignment="Top">
+
+        <TextBlock Text="DATA" Margin="38,34,0,0" Height="18" VerticalAlignment="Top" HorizontalAlignment="Left" Width="30"/>
+        <TextBlock Text="O.S" Margin="42,64,0,0" Height="18" VerticalAlignment="Top" HorizontalAlignment="Left" Width="22"/>
+        <TextBlock Text="OPERADOR" Margin="21,94,0,0" Height="18" VerticalAlignment="Top" HorizontalAlignment="Left" Width="64"/>
+        <TextBlock Text="Nº DO LOTE" Margin="20,124,0,0" Height="18" VerticalAlignment="Top" HorizontalAlignment="Left" Width="66"/>
+        <TextBlock Text="FORNECEDOR" Margin="14,154,0,0" Height="18" VerticalAlignment="Top" HorizontalAlignment="Left" Width="78"/>
+        <TextBlock Text="CLIENTE" Margin="30,185,0,0" Height="18" VerticalAlignment="Top" HorizontalAlignment="Left" Width="46"/>
+        <TextBlock Text="COD. MATERIAL" Margin="10,214,0,0" Height="18" VerticalAlignment="Top" HorizontalAlignment="Left" Width="85"/>
+        <TextBlock Text="PRODUÇÃO FORA DO SISTEMA" Margin="118,0,0,0" HorizontalAlignment="Left" Width="170" Height="17" VerticalAlignment="Top"/>
+        <TextBlock Text="MÁQUINA" Margin="257,34,0,0" HorizontalAlignment="Left" Width="56" Height="18" VerticalAlignment="Top"/>
+        <TextBlock Text="METROS" Margin="266,64,90,161"/>
+        <TextBlock Text="SEQUENCIAL" Margin="262,214,0,0" Height="18" VerticalAlignment="Top" HorizontalAlignment="Left" Width="72"/>
+
+        <TextBlock x:Name="DtSiliconizacao" Background="White" Margin="97,34,0,0" HorizontalAlignment="Left" Width="128" Height="18" VerticalAlignment="Top" TextAlignment="Center"/>
+        <TextBlock x:Name="IdMaquina" Background="LightGray" Margin="315,34,0,0" Foreground="DarkRed" HorizontalAlignment="Left" Width="78" Height="18" VerticalAlignment="Top" TextAlignment="Center"/>
+        <TextBlock x:Name="CdOS" Background="LightGray" Margin="97,64,0,0" Foreground="DarkRed" HorizontalAlignment="Left" Width="154" Height="18" VerticalAlignment="Top" TextAlignment="Center"/>
+        <TextBlock x:Name="NrMetrosLinear" Background="LightGray" Margin="315,64,10,161" Foreground="DarkRed" TextAlignment="Center"/>
+        <TextBlock x:Name="NmOperador" Background="LightGray" Margin="97,94,0,0" HorizontalAlignment="Left" Width="296" Height="18" VerticalAlignment="Top" TextAlignment="Center"/>
+        <TextBlock x:Name="IdRecebimento" Background="LightGray" Margin="97,124,0,0" Height="18" VerticalAlignment="Top" HorizontalAlignment="Left" Width="296" TextAlignment="Center"/>
+        <TextBlock x:Name="NmFornecedor" Background="LightGray" Margin="97,154,0,0" Height="18" VerticalAlignment="Top" HorizontalAlignment="Left" Width="296" TextAlignment="Center"/>
+        <TextBlock x:Name="NmCliente" Background="LightGray" Margin="97,184,0,0" TextAlignment="Center" HorizontalAlignment="Left" Width="296" Height="18" VerticalAlignment="Top"/>
+        <TextBlock x:Name="CdInterno" Background="LightGray" Margin="97,214,0,0" Foreground="DarkRed" Height="18" VerticalAlignment="Top" HorizontalAlignment="Left" Width="154" TextAlignment="Center"/>
+        <TextBlock x:Name="NrBobinaProduzida" Background="LightGray" Margin="341,214,0,0" Foreground="DarkRed" Height="18" VerticalAlignment="Top" HorizontalAlignment="Left" Width="52" TextAlignment="Center"/>
+    </Grid>
+</Window>

@@ -1,0 +1,52 @@
+﻿<Window x:Class="LinerApp.Funcionalidades.db.LayoutEtiquetaAprovacao"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Liner Brasil Ltda." Height="261" Width="405" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid x:Name="grdImpressao">
+        <Rectangle HorizontalAlignment="Left" Height="18" Margin="3,22,0,0" Stroke="Black" VerticalAlignment="Top" Width="173"/>
+        <Rectangle HorizontalAlignment="Left" Height="40" Margin="3,22,0,0" Stroke="Black" VerticalAlignment="Top" Width="173"/>
+        <Rectangle HorizontalAlignment="Left" Height="82" Margin="3,22,0,0" Stroke="Black" VerticalAlignment="Top" Width="89"/>
+        <Rectangle HorizontalAlignment="Left" Height="61" Margin="3,22,0,0" Stroke="Black" VerticalAlignment="Top" Width="89"/>
+        <Rectangle HorizontalAlignment="Left" Height="86" Margin="4,155,0,0" Stroke="Black" VerticalAlignment="Top" Width="397"/>
+        <Rectangle HorizontalAlignment="Left" Height="48" Margin="182,22,0,0" Stroke="Black" VerticalAlignment="Top" Width="219"/>
+        <Rectangle HorizontalAlignment="Left" Height="95" Margin="182,22,0,0" Stroke="Black" VerticalAlignment="Top" Width="50"/>
+        <Rectangle Height="19" Margin="182,116,0,0" Stroke="Black" VerticalAlignment="Top" HorizontalAlignment="Left" Width="50"/>
+        <Rectangle HorizontalAlignment="Left" Height="48" Margin="231,69,0,0" Stroke="Black" VerticalAlignment="Top" Width="170"/>
+        <Rectangle HorizontalAlignment="Left" Height="19" Margin="182,116,0,0" Stroke="Black" VerticalAlignment="Top" Width="219"/>
+        <Rectangle HorizontalAlignment="Left" Height="61" Margin="91,22,0,0" Stroke="Black" VerticalAlignment="Top" Width="37"/>
+        <Rectangle HorizontalAlignment="Left" Height="82" Margin="91,22,0,0" Stroke="Black" VerticalAlignment="Top" Width="37"/>
+        <Rectangle HorizontalAlignment="Left" Height="61" Margin="127,22,0,0" Stroke="Black" VerticalAlignment="Top" Width="49"/>
+        <Rectangle HorizontalAlignment="Left" Height="82" Margin="127,22,0,0" Stroke="Black" VerticalAlignment="Top" Width="49"/>
+        <TextBlock x:Name="txtMateriaPrima" HorizontalAlignment="Left" Margin="12,4,0,0" TextWrapping="Wrap" Text="MATÉRIA PRIMA (PAPEL)" VerticalAlignment="Top" Width="133" Height="14" FontSize="12"/>
+        <TextBlock x:Name="txtCaracteristicas" HorizontalAlignment="Left" Margin="4,23,0,0" TextWrapping="Wrap" Text="Características" VerticalAlignment="Top" FontSize="12" Width="87"/>
+        <TextBlock x:Name="txtAlvejante" HorizontalAlignment="Left" Margin="4,40,0,0" TextWrapping="Wrap" Text="Alvejante" VerticalAlignment="Top" FontSize="12" Width="87" Height="21"/>
+        <TextBlock x:Name="txtGramatura" HorizontalAlignment="Left" Margin="4,62,0,0" TextWrapping="Wrap" Text="Gramatura" VerticalAlignment="Top" FontSize="12" Width="87" Height="20"/>
+        <TextBlock x:Name="txtValor" HorizontalAlignment="Left" Margin="92,23,0,0" TextWrapping="Wrap" Text="Valor" VerticalAlignment="Top" FontSize="12" Width="35"/>
+        <TextBlock x:Name="txtLargura" HorizontalAlignment="Left" Margin="4,83,0,0" TextWrapping="Wrap" Text="Largura" VerticalAlignment="Top" FontSize="12" Width="87" Height="20"/>
+        <TextBlock x:Name="txtUnidade" HorizontalAlignment="Left" Margin="128,23,0,0" TextWrapping="Wrap" Text="Unidade" VerticalAlignment="Top" FontSize="12" Width="47"/>
+        <TextBlock x:Name="txtUndAlvj" HorizontalAlignment="Left" Margin="128,40,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" FontSize="12" Width="47" Height="21" TextAlignment="Center"/>
+        <TextBlock x:Name="txtUndGram" HorizontalAlignment="Left" Margin="128,62,0,0" TextWrapping="Wrap" Text="g/m2" VerticalAlignment="Top" FontSize="12" Width="47" Height="20" TextAlignment="Center"/>
+        <TextBlock x:Name="txtLoteEntradaLiner" HorizontalAlignment="Left" Margin="183,22,0,0" TextWrapping="Wrap" Text="Lote de 
+                   Entrada
+                   Liner" VerticalAlignment="Top" Width="48" FontSize="12" Height="46" TextAlignment="Center"/>
+        <TextBlock x:Name="txtNumBobina" HorizontalAlignment="Left" Margin="182,76,0,0" TextWrapping="Wrap" Text="N da
+                   Bobina" VerticalAlignment="Top" Width="48" FontSize="12" TextAlignment="Center" Height="36"/>
+        <TextBlock x:Name="txtInspetor" HorizontalAlignment="Left" Margin="183,117,0,0" TextWrapping="Wrap" Text="Inspetor" VerticalAlignment="Top" Width="48" FontSize="12" TextAlignment="Center"/>
+        <TextBlock x:Name="txtUndLarg" HorizontalAlignment="Left" Margin="128,83,0,0" TextWrapping="Wrap" Text="mm" VerticalAlignment="Top" FontSize="12" Width="47" Height="20" TextAlignment="Center"/>
+        <TextBlock x:Name="DsStatusAmostra" Margin="6,172,0,0" TextWrapping="Wrap" Text="REPROVADO" TextAlignment="Center" FontSize="38" HorizontalAlignment="Left" Width="394" Height="68" VerticalAlignment="Top"/>
+        <TextBlock x:Name="StAlvejante" HorizontalAlignment="Left" Margin="92,40,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="12" Width="35" TextAlignment="Center" Height="21"/>
+        <TextBlock x:Name="NrGramatura" HorizontalAlignment="Left" Margin="92,62,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="12" Width="35" TextAlignment="Center" Height="20"/>
+        <TextBlock x:Name="NrLargura" HorizontalAlignment="Left" Margin="92,83,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="12" Width="35" TextAlignment="Center" Height="20"/>
+        <TextBlock x:Name="DtImpressao" HorizontalAlignment="Left" Margin="187,4,0,0" TextWrapping="Wrap" Text="99/99/9999" VerticalAlignment="Top" Width="56" Height="14" FontSize="12" TextAlignment="Center"/>
+        <TextBlock x:Name="HtImpressao" HorizontalAlignment="Left" Margin="350,2,0,0" TextWrapping="Wrap" Text="99:99:99" VerticalAlignment="Top" Width="49" Height="18" FontSize="12" TextAlignment="Center"/>
+        <TextBlock x:Name="IdRecebimento" HorizontalAlignment="Left" Margin="232,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="168" FontSize="12" Height="46" TextAlignment="Center"/>
+        <TextBlock x:Name="NrBobina" Margin="232,70,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="12" Height="46" TextAlignment="Center" HorizontalAlignment="Left" Width="168"/>
+        <TextBlock x:Name="NmResponsavel" Margin="232,117,0,0" TextWrapping="Wrap" Text="" FontSize="12" TextAlignment="Center" HorizontalAlignment="Left" Width="168" Height="16" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

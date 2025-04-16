@@ -1,0 +1,101 @@
+﻿<Window x:Class="LinerApp.Funcionalidades.CF0406"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Height="285" Width="445" ResizeMode="NoResize" Title="Liner Brasil Ltda."
+        WindowStartupLocation="CenterScreen" WindowStyle="None"
+        BorderBrush="#006934" BorderThickness="3">
+
+    <Grid Background="White" Margin="0,10,4,4">
+
+        <TextBlock Text="Máquina:" Margin="40,0,339,246"/>
+        <TextBox x:Name="IdMaquina" Margin="40,17,271,227"/>
+
+        <TextBlock Text="Data Inicial:" Margin="40,46,330,201"/>
+        <DatePickerTextBox x:Name="DtInicial" Margin="40,65,271,180"/>
+
+        <TextBlock Text="OS:" Margin="40,88,343,160"/>
+        <TextBox x:Name="CdOS" Margin="40,102,271,142"/>
+
+        <TextBlock Text="Tipo Parada:" Margin="40,126,325,117"/>
+        <TextBox x:Name="IdTipoParada" Margin="40,142,271,102"/>
+
+        <TextBlock Text="Data Final:" Margin="38,164,280,83"/>
+        <DatePickerTextBox x:Name="DtFinal" Margin="40,180,271,65"/>
+
+        <TextBox x:Name="DsMotivo" Text="Motivo" Margin="190,-2,10,40" TextWrapping="Wrap"/>
+
+        <Button 
+            x:Name="btnConfirmar"
+            Content="CONFIRMAR" 
+            Width="66" 
+            Height="26" 
+            Background="#003C1E" 
+            Foreground="White" 
+            FontSize="8" 
+            FontWeight="Bold"   
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top" 
+            Margin="146,239,0,0" 
+            Click="btnConfirmar_Click"
+            BorderThickness="1">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#006934"/>
+                    <Setter Property="BorderBrush" Value="#006934"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="Padding" Value="5"/>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="1"
+                                CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              Content="{TemplateBinding Content}"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button 
+            x:Name="btnVoltar"
+            Content="VOLTAR" 
+            Width="66" 
+            Height="26" 
+            Background="White" 
+            Foreground="#003C1E" 
+            FontSize="8" 
+            FontWeight="Bold"   
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top" 
+            Margin="218,239,0,0" 
+            Click="btnVoltar_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#006934"/>
+                    <Setter Property="BorderBrush" Value="#003C1E"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="Padding" Value="5"/>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="1"
+                CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     Content="{TemplateBinding Content}"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+</Window>
